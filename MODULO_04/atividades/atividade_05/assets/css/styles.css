@@ -385,6 +385,7 @@ td {
 
 .letter {
     border-bottom: 2px solid var(--title-color);
+    color: #333;
 }
 
 .wrong__letter {

@@ -18,8 +18,6 @@ function mountGame(gameData) {
     // Busca a flag de recuperação de jogo
     const restart = JSON.parse(localStorage.getItem("restart"));
 
-    //Ativa o teclado virtual
-    keyboardVirtual();
     //Ativa som
     sound();
 
@@ -39,6 +37,10 @@ function mountGame(gameData) {
             tipText.textContent = gameData.tip;
             livesText.textContent = gameData.player.lives;
             currentTimeText.textContent = timeToString(gameData.score);
+
+            for (let i = 0; i <= 5 - gameData.player.lives; i++) {
+              document.querySelector(`#p-${i}`).style.display = 'block'
+            }
         } else {
             // Se não, apaga o jogo salvo e inicia um novo jogo
             localStorage.removeItem("game");

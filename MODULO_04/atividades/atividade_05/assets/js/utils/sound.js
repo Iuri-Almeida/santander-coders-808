@@ -3,7 +3,6 @@ export default function sound() {
     let soundState = true;
 
     function toggleSound(elem) {
-        console.log(elem)
         if (soundState) {
             elem.play()
             elem.pause();

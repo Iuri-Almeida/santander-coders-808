@@ -1,30 +1,32 @@
 class Player {
-  lives;
-  hits = 0;
+    lives;
+    hits = 0;
 
-  constructor(guesses) {
-    this.lives = guesses;
-  }
+    constructor(guesses) {
+        this.lives = guesses;
+    }
 
-  set hit(number) {
-    this.hits += number;
-  }
+    set hit(number) {
+        this.hits += number;
+    }
 
-  mistake() {
-    this.lives--;
-  }
+    mistake() {
+        document.getElementById("loosePoint").play();
+        this.lives--;
 
-  get remainingGuesses() {
-    return this.lives;
-  }
+    }
 
-  get gameOver() {
-    return this.remainingGuesses === 0;
-  }
+    get remainingGuesses() {
+        return this.lives;
+    }
 
-  get hitCount() {
-    return this.hits;
-  }
+    get gameOver() {
+        return this.remainingGuesses === 0;
+    }
+
+    get hitCount() {
+        return this.hits;
+    }
 }
 
 export default Player;
